@@ -62,8 +62,9 @@ async def intro(ctx):
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
     embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/laziestvillager", inline=False)
     embedMsg.add_field(name="Cout 2", value="aka Alexa: https://www.twitch.tv/wwhisper", inline=False)
-    embedMsg.add_field(name="Devoid", value="aka Devoid: https://www.twitch.tv/devoidxx", inline=False)
     embedMsg.add_field(name="Mom/kararara", value="aka Alex: https://www.twitch.tv/kkaurora", inline=False)
+    embedMsg.add_field(name="Devoid", value="aka Devoid: https://www.twitch.tv/devoidxx", inline=False)
+    embedMsg.add_field(name="MoMoo", value="aka momo: https://www.twitch.tv/momobun94", inline=False)
     embedMsg.add_field(name="----------------------------------------------------------------------", value="```To see my commands type =help```")
 
     await ctx.channel.send(embed=embedMsg)
