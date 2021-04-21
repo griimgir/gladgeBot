@@ -5,7 +5,11 @@ import youtube_dl
 import os
 import shutil
 from os import system
+from dotenv import load_dotenv
 import random
+
+#iniate token
+load_dotenv()
 
 #initiate prefix
 PREFIX = '='
@@ -212,4 +216,4 @@ async def realcout(ctx):
     voice.source.volume = 0.75
 
 
-gladge.run('ODE1MDU4ODY0Mjk0MDY4MjY0.YDm4uA.MDUWcudiddyXqrAGR6niJ-7O_Kc')
+gladge.run(os.getenv('TOKEN'))
