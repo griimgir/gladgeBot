@@ -34,30 +34,41 @@ async def on_message(message):
     if message.author == gladge.user:
         return
     
-    if message.content.startswith("=who is your creator"):
+    if message.content.startswith("-who is your creator"):
         await message.reply("Ej is my creator")
-    elif message.content.startswith("=who is your creator"):
+    elif message.content.startswith("-who is your creator"):
         await message.reply("Ej is my creator")
-    elif message.content.startswith("=I am your creator"):
+    elif message.content.startswith("-I am your creator"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("=i am your creator"):
+    elif message.content.startswith("-i am your creator"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("=whats your name"):
+    elif message.content.startswith("-i'm your creator now"):
+        await message.reply("No, Ej is my creator")
+    elif message.content.startswith("-I'm your creator now"):
+        await message.reply("No, Ej is my creator")
+    elif message.content.startswith("-Im your creator now"):
+        await message.reply("No, Ej is my creator")
+    elif message.content.startswith("-im your creator now"):
+        await message.reply("No, Ej is my creator")
+
+    elif message.content.startswith("-whats your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("=what's your name"):
+    elif message.content.startswith("-what's your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("=what's your name?"):
+    elif message.content.startswith("-what's your name?"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("=what is your name"):
+    elif message.content.startswith("-what is your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("=what is your name?"):
+    elif message.content.startswith("-what is your name?"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("=who's ej's dj"):
+    elif message.content.startswith("-who's ej's dj"):
         await message.reply("jeni is ej's dj")
-    elif message.content.startswith("=who's jeni's dj"):
+    elif message.content.startswith("-who's jeni's dj"):
         await message.reply("ej")
+
+    #gladge AI initiates here
     else:
-        if message.content.startswith("="):
+        if message.content.startswith("-"):
             response = await gladgeTalk.get_ai_response(message.content)
             await message.reply(response)
 
