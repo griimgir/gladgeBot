@@ -63,7 +63,11 @@ async def on_message(message):
         await message.reply("Gladge bot")
     elif message.content.startswith("-who's ej's dj"):
         await message.reply("jeni is ej's dj")
+    elif message.content.startswith("-whos ejs dj"):
+        await message.reply("jeni is ej's dj")
     elif message.content.startswith("-who's jeni's dj"):
+        await message.reply("ej")
+    elif message.content.startswith("-whos jenis dj"):
         await message.reply("ej")
 
     #gladge AI initiates here
@@ -79,6 +83,7 @@ async def helpP(ctx):
     helpc = [
 
         #["",""],  <-- format to add in help
+        ["-text","to talk to Gladge AI [example: -who's ej's dj?]"],
         ["gladge","introduction"],
         ["hug {@user}","send them a hug emote"],
         ["violin","Mr.Krabs playing a sad song in the world's smallest violin. To play the sound, have gladge be in vc."],
@@ -105,9 +110,9 @@ async def helpP(ctx):
 async def intro(ctx):
     embedMsg = discord.Embed(title="Hello! I'm Gladge, your personal bot made by a cout (Po), for couts", colour=discord.Colour(0xffafe3), description="I was materialized from pure chaotic energy in the flames of degen hours. These degens have put together their ideas to make Ej write a bot specifically for their needs. In typical fashion, they made a programmer work in grueling hours of unpaid work to write a bot just for a joke.")
 
-    embedMsg.set_thumbnail(url="https://cdn.discordapp.com/avatars/211003392347209729/a_562bc1a36d487e3cec4cd56d60d53e84.gif")
+    embedMsg.set_thumbnail(url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
     embedMsg.set_author(name="Gladge Bot", icon_url="https://cdn.discordapp.com/app-icons/815058864294068264/d3c6d351695533a8e3d344438f09c7d2.png")
-    embedMsg.set_footer(text="Ej™", icon_url="https://cdn.discordapp.com/avatars/211003392347209729/a_562bc1a36d487e3cec4cd56d60d53e84.gif")
+    embedMsg.set_footer(text="Ej™", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
 
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
     embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/arioli", inline=False)
