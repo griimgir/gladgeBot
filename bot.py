@@ -26,7 +26,7 @@ gladgeTalk = RandomStuff(async_mode = True)
 @gladge.event
 async def on_ready():
     print('Logging in as {0.user}'.format(gladge))
-    await gladge.change_presence(activity=discord.Activity(type=discord.ActivityType.streaming, name='type =gladge'))
+    await gladge.change_presence(activity=discord.Activity(type=discord.ActivityType.streaming, name='type .gladge'))
 
 # Testing functions/ Misc.
 @gladge.event
