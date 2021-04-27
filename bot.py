@@ -18,7 +18,7 @@ os.chdir("bank")
 load_dotenv()
 
 #initiate prefix
-PREFIX = '='
+PREFIX = '.'
 gladge = commands.Bot(command_prefix=PREFIX, help_command=None)
 gladgeTalk = RandomStuff(async_mode = True)
 
@@ -34,45 +34,45 @@ async def on_message(message):
     if message.author == gladge.user:
         return
     
-    if message.content.startswith("-who is your creator"):
+    if message.content.startswith(";who is your creator"):
         await message.reply("Ej is my creator")
-    elif message.content.startswith("-who is your creator"):
+    elif message.content.startswith(";who is your creator"):
         await message.reply("Ej is my creator")
-    elif message.content.startswith("-I am your creator"):
+    elif message.content.startswith(";I am your creator"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("-i am your creator"):
+    elif message.content.startswith(";i am your creator"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("-i'm your creator now"):
+    elif message.content.startswith(";i'm your creator now"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("-I'm your creator now"):
+    elif message.content.startswith(";I'm your creator now"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("-Im your creator now"):
+    elif message.content.startswith(";Im your creator now"):
         await message.reply("No, Ej is my creator")
-    elif message.content.startswith("-im your creator now"):
+    elif message.content.startswith(";im your creator now"):
         await message.reply("No, Ej is my creator")
 
-    elif message.content.startswith("-whats your name"):
+    elif message.content.startswith(";whats your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("-what's your name"):
+    elif message.content.startswith(";what's your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("-what's your name?"):
+    elif message.content.startswith(";what's your name?"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("-what is your name"):
+    elif message.content.startswith(";what is your name"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("-what is your name?"):
+    elif message.content.startswith(";what is your name?"):
         await message.reply("Gladge bot")
-    elif message.content.startswith("-who's ej's dj"):
+    elif message.content.startswith(";who's ej's dj"):
         await message.reply("jeni is ej's dj")
-    elif message.content.startswith("-whos ejs dj"):
+    elif message.content.startswith(";whos ejs dj"):
         await message.reply("jeni is ej's dj")
-    elif message.content.startswith("-who's jeni's dj"):
+    elif message.content.startswith(";who's jeni's dj"):
         await message.reply("ej")
-    elif message.content.startswith("-whos jenis dj"):
+    elif message.content.startswith(";whos jenis dj"):
         await message.reply("ej")
 
     #gladge AI initiates here
     else:
-        if message.content.startswith("-"):
+        if message.content.startswith(";"):
             response = await gladgeTalk.get_ai_response(message.content)
             await message.reply(response)
 
@@ -83,7 +83,7 @@ async def helpP(ctx):
     helpc = [
 
         #["",""],  <-- format to add in help
-        ["-text","to talk to Gladge AI [example: -who's ej's dj?]"],
+        [";text","to talk to Gladge AI [example: ;who's ej's dj?]"],
         ["gladge","introduction"],
         ["hug {@user}","send them a hug emote"],
         ["violin","Mr.Krabs playing a sad song in the world's smallest violin. To play the sound, have gladge be in vc."],
@@ -108,11 +108,11 @@ async def helpP(ctx):
 
 @gladge.command(pass_context=True, aliases=['gladge'])
 async def intro(ctx):
-    embedMsg = discord.Embed(title="Hello! I'm Gladge, your personal bot made by a cout (Po), for couts", colour=discord.Colour(0xffafe3), description="I was materialized from pure chaotic energy in the flames of degen hours. These degens have put together their ideas to make Ej write a bot specifically for their needs. In typical fashion, they made a programmer work in grueling hours of unpaid work to write a bot just for a joke.")
+    embedMsg = discord.Embed(title="Hello! I'm Gladge (AI Chat powered by PGamerX's prsaw), your personal bot made by a cout (Ej), for couts", colour=discord.Colour(0xffafe3), description="I was materialized from pure chaotic energy in the flames of degen hours. These degens have put together their ideas to make Ej write a bot specifically for their needs. In typical fashion, they made a programmer work in grueling hours of unpaid work to write a bot just for a joke.")
 
     embedMsg.set_thumbnail(url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
-    embedMsg.set_author(name="Gladge Bot", icon_url="https://cdn.discordapp.com/app-icons/815058864294068264/d3c6d351695533a8e3d344438f09c7d2.png")
-    embedMsg.set_footer(text="Ej™", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
+    embedMsg.set_author(name="Gladge Bot - AI chat powered by PGamerX", icon_url="https://cdn.discordapp.com/app-icons/815058864294068264/d3c6d351695533a8e3d344438f09c7d2.png")
+    embedMsg.set_footer(text="Ej™ & AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
 
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
     embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/arioli", inline=False)
@@ -120,7 +120,7 @@ async def intro(ctx):
     embedMsg.add_field(name="Mom/kararara", value="aka Alex: https://www.twitch.tv/kkalexandria", inline=False)
     embedMsg.add_field(name="Devoid", value="aka Devoid: https://www.twitch.tv/devoidxx", inline=False)
     embedMsg.add_field(name="MoMoo", value="aka momo: https://www.twitch.tv/momoobun", inline=False)
-    embedMsg.add_field(name="----------------------------------------------------------------------", value="```To see my commands type =help```")
+    embedMsg.add_field(name="----------------------------------------------------------------------", value="```To see my commands type .help```")
 
     await ctx.channel.send(embed=embedMsg)
 
@@ -147,7 +147,7 @@ async def hugs(ctx):
 
 @gladge.command(pass_context=True, aliases=['violin'])
 async def vio(ctx):
-    await ctx.channel.send(file=discord.File('gifs/crabsViolin.gif'))
+    await ctx.channel.send(file=discord.File('../gifs/crabsViolin.gif'))
 
     channel = ctx.message.author.voice.channel #chennel author is in
     vcCheck = get(gladge.voice_clients, guild=ctx.guild)
@@ -166,17 +166,17 @@ async def vio(ctx):
     if vcCheck == None:
         await channel.connect()
         voice = get(gladge.voice_clients, guild=ctx.guild)
-        voice.play(discord.FFmpegPCMAudio("soundbytes/violin.mp3"), after=lambda e: end())
+        voice.play(discord.FFmpegPCMAudio("../soundbytes/violin.mp3"), after=lambda e: end())
         voice.source = discord.PCMVolumeTransformer(voice.source)
-        voice.source.volume = 0.65
+        voice.source.volume = 0.10
 
 
     #if gladge is in vc
     else:
         voice = get(gladge.voice_clients, guild=ctx.guild)
-        voice.play(discord.FFmpegPCMAudio("soundbytes/violin.mp3"), after=lambda e: end())
+        voice.play(discord.FFmpegPCMAudio("../soundbytes/violin.mp3"), after=lambda e: end())
         voice.source = discord.PCMVolumeTransformer(voice.source)
-        voice.source.volume = 0.65
+        voice.source.volume = 0.10
 
 
 @gladge.command(pass_context=True, aliases=['come'])
@@ -200,7 +200,7 @@ async def join(ctx):
 @gladge.command(pass_context=True, aliases=['rocklet'])
 async def rockletComms(ctx):
     await ctx.channel.send("imagine thinking rocklet wont last forever. like it isn't written in the stars. like they aren't my one true pairing. like they weren't programmed into the game purely to live on your island as a duo. i curse you with rocket and violet. may they move to your island and never have a thought bubble. may they force you to reset and somehow both become your starters for eternity. may you be trapped in the rocklet nation for life. -sattie")
-    await ctx.channel.send(file=discord.File('pics/rocklet.png'))
+    await ctx.channel.send(file=discord.File('../pics/rocklet.png'))
 
 @gladge.command(pass_context=True, aliases=['alexaQuote'])
 async def alexabeglad(ctx):
@@ -208,19 +208,19 @@ async def alexabeglad(ctx):
 
 @gladge.command(pass_context=True, aliases=['sadgeRain'])
 async def sadgeRainGif(ctx):
-    await ctx.channel.send(file=discord.File('gifs/sadge.gif'))
+    await ctx.channel.send(file=discord.File('../gifs/sadge.gif'))
 
 @gladge.command(pass_context=True, aliases=['teleRun'])
 async def teletubRuns(ctx):
-    await ctx.channel.send(file=discord.File('gifs/telerun.gif'))
+    await ctx.channel.send(file=discord.File('../gifs/telerun.gif'))
 
 @gladge.command(pass_context=True, aliases=['momoChaos'])
 async def momoChaotic(ctx):
-    await ctx.channel.send(file=discord.File('gifs/momoBoom.gif'))
+    await ctx.channel.send(file=discord.File('../gifs/momoBoom.gif'))
 
 @gladge.command(pass_context=True, aliases=['jamesChaos'])
 async def jamesChaotic(ctx):
-    await ctx.channel.send(file=discord.File('gifs/jamesBoom.gif'))
+    await ctx.channel.send(file=discord.File('../gifs/jamesBoom.gif'))
 
 @gladge.command(pass_context=True, aliases=['MugiStan', 'mugiStan', 'mugistan'])
 async def mugimugi(ctx):
@@ -229,9 +229,9 @@ async def mugimugi(ctx):
         return
 
     voice = get(gladge.voice_clients, guild=ctx.guild)
-    voice.play(discord.FFmpegPCMAudio("soundbytes/mugistan.mp3"), after=lambda e: end())
+    voice.play(discord.FFmpegPCMAudio("../soundbytes/mugistan.mp3"), after=lambda e: end())
     voice.source = discord.PCMVolumeTransformer(voice.source)
-    voice.source.volume = 0.75
+    voice.source.volume = 0.20
 
 @gladge.command(pass_context=True, aliases=['modApp'])
 async def couters(ctx):
@@ -240,9 +240,9 @@ async def couters(ctx):
         return
 
     voice = get(gladge.voice_clients, guild=ctx.guild)
-    voice.play(discord.FFmpegPCMAudio("soundbytes/cout.mp3"), after=lambda e: end())
+    voice.play(discord.FFmpegPCMAudio("../soundbytes/cout.mp3"), after=lambda e: end())
     voice.source = discord.PCMVolumeTransformer(voice.source)
-    voice.source.volume = 0.20
+    voice.source.volume = 0.10
 
 @gladge.command(pass_context=True, aliases=['endgame'])
 async def whyers(ctx):
@@ -251,9 +251,9 @@ async def whyers(ctx):
         return
 
     voice = get(gladge.voice_clients, guild=ctx.guild)
-    voice.play(discord.FFmpegPCMAudio("soundbytes/endgame.mp3"), after=lambda e: end())
+    voice.play(discord.FFmpegPCMAudio("../soundbytes/endgame.mp3"), after=lambda e: end())
     voice.source = discord.PCMVolumeTransformer(voice.source)
-    voice.source.volume = 0.25
+    voice.source.volume = 0.10
 
 @gladge.command(pass_context=True, aliases=['cout'])
 async def realcout(ctx):
@@ -262,9 +262,9 @@ async def realcout(ctx):
         return
 
     voice = get(gladge.voice_clients, guild=ctx.guild)
-    voice.play(discord.FFmpegPCMAudio("soundbytes/realcout.mp3"), after=lambda e: end())
+    voice.play(discord.FFmpegPCMAudio("../soundbytes/realcout.mp3"), after=lambda e: end())
     voice.source = discord.PCMVolumeTransformer(voice.source)
-    voice.source.volume = 0.75
+    voice.source.volume = 0.10
 
 @gladge.command(pass_context=True, aliases=['t'])
 async def talk(ctx):
