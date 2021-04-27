@@ -112,7 +112,7 @@ async def intro(ctx):
 
     embedMsg.set_thumbnail(url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
     embedMsg.set_author(name="Gladge Bot - AI chat powered by PGamerX", icon_url="https://cdn.discordapp.com/app-icons/815058864294068264/d3c6d351695533a8e3d344438f09c7d2.png")
-    embedMsg.set_footer(text="Ej™ & AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
+    embedMsg.set_footer(text="Ej™ | GLADGE DRWAING BY ALEX | AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
 
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
     embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/arioli", inline=False)
