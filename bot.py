@@ -10,6 +10,7 @@ import random
 import string
 import json
 from prsaw import RandomStuff #inititate AI repository, Import module DO NOT MESS WITH,. License belongs to https://pypi.org/project/prsaw/
+from discord import User
 
 #initiate bank
 os.chdir("bank")
@@ -61,14 +62,14 @@ async def on_message(message):
         await message.reply("Gladge bot")
     elif message.content.startswith(";what is your name?"):
         await message.reply("Gladge bot")
-    elif message.content.startswith(";who's ej's dj"):
-        await message.reply("jeni is ej's dj")
-    elif message.content.startswith(";whos ejs dj"):
-        await message.reply("jeni is ej's dj")
-    elif message.content.startswith(";who's jeni's dj"):
-        await message.reply("ej")
-    elif message.content.startswith(";whos jenis dj"):
-        await message.reply("ej")
+    # elif message.content.startswith(";who's ej's dj"):
+    #     await message.reply("jeni is ej's dj")
+    # elif message.content.startswith(";whos ejs dj"):
+    #     await message.reply("jeni is ej's dj")
+    # elif message.content.startswith(";who's jeni's dj"):
+    #     await message.reply("ej")
+    # elif message.content.startswith(";whos jenis dj"):
+    #     await message.reply("ej")
 
     #gladge AI initiates here
     else:
@@ -112,7 +113,7 @@ async def intro(ctx):
 
     embedMsg.set_thumbnail(url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
     embedMsg.set_author(name="Gladge Bot - AI chat powered by PGamerX", icon_url="https://cdn.discordapp.com/app-icons/815058864294068264/d3c6d351695533a8e3d344438f09c7d2.png")
-    embedMsg.set_footer(text="Ej™ | GLADGE DRWAING BY ALEX | AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
+    embedMsg.set_footer(text="Ej™ | GLADGE DRAWING BY ALEX | AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
 
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
     embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/arioli", inline=False)
@@ -272,6 +273,46 @@ async def talk(ctx):
         return
     response = await gladgeTalk.get_ai_response(ctx.content)
     await ctx.reply(response)
+
+@gladge.command(pass_context=True, aliases=['tuckin'])
+async def tuck(ctx, user: User):
+    await ctx.send("<:tucked:852830306817540127> " + user.mention + " has been tucked in, goodnight!")
+
+@gladge.command(pass_context=True, aliases=['wdym'])
+async def wdymCounter(ctx):
+    # retrieves counter
+    try:
+        open("wdymCounter.txt", "x").close()
+        counter = 0
+    except:
+        with open("wdymCounter.txt", "r") as file:
+            counter = int(file.readlines()[0])
+    
+    # update the counter
+    with open("wdymCounter.txt", "w") as file:
+        counter = counter + 1
+        file.write(str(counter))
+
+    # file.close()
+
+    await ctx.send("wdym counter: " + str(counter))
+
+    # # ...or if you're going to be updating it a lot
+    # file = open("wdymCounter.txt", "w")
+    # file.write(str(counter))
+
+    file.close() # Once you're completley done
+    
+@gladge.command(pass_context=True, aliases=['introAi'])
+async def aiintro(ctx):
+    def end():
+        print ("completed the sound clip")
+        return
+
+    voice = get(gladge.voice_clients, guild=ctx.guild)
+    voice.play(discord.FFmpegPCMAudio("../soundbytes/aiIntro.mp3"), after=lambda e: end())
+    voice.source = discord.PCMVolumeTransformer(voice.source)
+    voice.source.volume = 0.20
 
 
 gladge.run(os.getenv('TOKEN'))
