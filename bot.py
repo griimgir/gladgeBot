@@ -116,10 +116,9 @@ async def intro(ctx):
     embedMsg.set_footer(text="Ej™ | GLADGE DRAWING BY ALEX | AI chat uses library made by PGamerX - [RSA]", icon_url="https://cdn.discordapp.com/emojis/788002806488629259.gif?v=1")
 
     embedMsg.add_field(name="Who are these couts that have percieved me", value="  -")
-    embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/arioli", inline=False)
+    embedMsg.add_field(name="Arioli Ravioli", value="aka Ari: https://www.twitch.tv/ariverie", inline=False)
     embedMsg.add_field(name="Cout 2", value="aka Alexa: https://www.twitch.tv/wwhisper", inline=False)
-    embedMsg.add_field(name="Mom/kararara", value="aka Alex: https://www.twitch.tv/kkalexandria", inline=False)
-    embedMsg.add_field(name="Devoid", value="aka Devoid: https://www.twitch.tv/devoidxx", inline=False)
+    embedMsg.add_field(name="Mom/kararara", value="aka Alex: https://www.twitch.tv/alexlilacs", inline=False)
     embedMsg.add_field(name="MoMoo", value="aka momo: https://www.twitch.tv/momoobun", inline=False)
     embedMsg.add_field(name="----------------------------------------------------------------------", value="```To see my commands type .help```")
 
@@ -288,18 +287,18 @@ async def wdymCounter(ctx):
         with open("wdymCounter.txt", "r") as file:
             counter = int(file.readlines()[0])
     
-    # update the counter
-    with open("wdymCounter.txt", "w") as file:
-        counter = counter + 1
-        file.write(str(counter))
+    # # update the counter
+    # with open("wdymCounter.txt", "w") as file:
+    #     counter = counter + 1
+    #     file.write(str(counter))
 
     # file.close()
 
-    await ctx.send("wdym counter: " + str(counter))
+    # ...or if you're going to be updating it a lot
+    file = open("wdymCounter.txt", "w")
+    file.write(str(counter))
 
-    # # ...or if you're going to be updating it a lot
-    # file = open("wdymCounter.txt", "w")
-    # file.write(str(counter))
+    await ctx.send("wdym counter: " + str(counter))
 
     file.close() # Once you're completley done
     
